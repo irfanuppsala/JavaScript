@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>Min första sida</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">&nbsp;</div>
+    	</div>
+        <div class="row">
+	        <div class="col-md-2">
+				<button id="myButton">Ändra text</button>
+	 			<p id="text">Hello World</p>
+
+	     	</div>
+     		<div class="col-md-2">
+     			<button id="showElement">Visa element</button>     		
+     			<p id="noShow"></p>
+     		</div>
+
+     		<div class="col-md-2">
+     			<button id="showInput">Visa input</button>
+     			<p id="Show"></p>
+     		</div>
+
+     		<div class="col-md-2">
+     			<button id="styleText">Style text</button>
+     			<p id="welcomeText">Hello World</p>
+     		</div>
+
+     		<div class="col-md-2">
+				<input type="button" id="modifyText" value="Klicka mig">
+     		</div>
+
+     		<div class="col-md-2">
+				<img id="myImage" onclick="displayForm()" src="img/menu.png" width="50" height="50">
+				<p id="showForm"></p>
+     		</div>     		
+        </div>
+    </div> 	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		document.getElementById("showElement").onclick = function() 
+		{
+			document.getElementById("noShow").innerHTML = "<h1>Hej</h1>";	
+		}
+
+     	document.getElementById("myButton").onclick = function() 
+     	{
+       		document.getElementById("text").innerHTML = "Hello everybody";
+       	}
+
+ 		document.getElementById("showInput").onclick = function() 
+ 		{
+           document.getElementById("Show").innerHTML = "<form action=#>Username: <input type='text name='username' id='username'><br><input type='submit' value='Submit'></form>";
+        }
+
+        document.getElementById("styleText").onclick = function() {
+           	document.getElementById("welcomeText").style.fontSize = "50px";
+           	document.getElementById("welcomeText").style.color = "red";
+     	}
+
+     	document.getElementById("modifyText").onclick = function() {
+     		document.getElementById("modifyText").value = "Jag är klickade";
+			document.getElementById("modifyText").style.backgroundColor = "green";
+     		document.getElementById("modifyText").style.color = "white";
+     	}
+
+     	var booValue = false;
+		function displayForm() {
+			if (booValue == true) {
+	    			var str = "<h2>Good day!</h2>";
+	    			document.getElementById("showForm").innerHTML = str.fontcolor("green");
+	    			booValue = false;
+			} else {
+	    			document.getElementById("showForm").innerHTML = "<h2>Good day!</h2>";
+	    			booValue = true;
+		    } 
+		}
+	</script>
+</body>
+</html>
