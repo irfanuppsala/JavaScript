@@ -41,6 +41,16 @@
 				<p id="showForm"></p>
      		</div>     		
         </div>
+        <span>&nbsp;</span>
+        <div id="row">
+			<div class="col-md-12">
+				<input type="button" id="add" value="Tillägg">
+				<input type="button" id="sub" value="Subtraktion">
+				<input type="button" id="div" value="Division">
+				<input type="button" id="mul" value="Multiplikation"><br><br>
+				<p id="result"></p>
+			</div>        	
+        </div>
     </div> 	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -83,6 +93,52 @@
 	    			document.getElementById("showForm").innerHTML = "<h2>Good day!</h2>";
 	    			booValue = true;
 		    } 
+		}
+
+		function add(first, second){
+			a = first;
+			return a + second;
+		}
+		function subtract(first, second){
+			a = first;
+			return a - second;
+		}
+		function divide(first, second){
+			a = first;
+			return a / second;
+		}
+		function multiply(first, second){
+			a = first;
+			return a * second;
+		}
+
+		document.getElementById("add").onclick = function() { 
+			document.getElementById("result").innerHTML = "<p><h2>1200+25</h2><br>" + add(1200,25) + "</p>";
+			document.getElementById("add").style.backgroundColor = "green";
+			document.getElementById("sub").style.backgroundColor = "";
+			document.getElementById("div").style.backgroundColor = "";
+			document.getElementById("mul").style.backgroundColor = "";
+		}
+		document.getElementById("sub").onclick = function() {
+			document.getElementById("result").innerHTML = "<p><h2>1200-25</h2><br>" + subtract(1200,25) + "</p>";
+			document.getElementById("sub").style.backgroundColor = "green";
+			document.getElementById("add").style.backgroundColor = "";
+			document.getElementById("div").style.backgroundColor = "";
+			document.getElementById("mul").style.backgroundColor = "";
+		}
+		document.getElementById("div").onclick = function() {
+			document.getElementById("result").innerHTML = "<p><h2>1200/25</h2><br>" + divide(1200,25) + "</p>";
+			document.getElementById("div").style.backgroundColor = "green";
+			document.getElementById("add").style.backgroundColor = "";
+			document.getElementById("sub").style.backgroundColor = "";
+			document.getElementById("mul").style.backgroundColor = "";
+		}
+		document.getElementById("mul").onclick = function() {
+			document.getElementById("result").innerHTML = "<p><h2>1200*25</h2><br>" + multiply(1200,25) + "</p>";
+			document.getElementById("mul").style.backgroundColor = "green";
+			document.getElementById("add").style.backgroundColor = "";
+			document.getElementById("div").style.backgroundColor = "";
+			document.getElementById("sub").style.backgroundColor = "";
 		}
 	</script>
 </body>
