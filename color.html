@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>Min första sida</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<script src="http://spelprogrammering.nu/simple.js">
+catX = 200;
+catY = 200;
+
+
+
+function update()
+{
+	clearScreen();
+	circle(catX, catY, 100, "red");
+	circle(180, 180, 10, "blue");
+	circle(220, 180, 10, "blue");
+	triangle(200, 200, 190, 210, 210, 210, "yellow");
+	rectangle(190, 225, 20, 5, "black");
+
+	circle(mouse.x, mouse.y, 20, "red");
+	//circle(catX, catY, 20, "blue");
+
+	if(keyboard.d)
+	catX += 1;
+	if(keyboard.a)
+	catX -= 1;
+	if(keyboard.w)
+	catY -= 1;
+	if(keyboard.s)
+	catY += 1;
+
+	var d = distance(mouse.x, mouse.y, catX, catY);
+	if(d < 140)
+	{
+		//alert('Game over!');
+		//stopUpdate();
+			// circle(200, 200, 100, "red");
+			// circle(180, 180, 15, "blue");
+			// circle(220, 180, 15, "blue");
+			// triangle(200, 200, 190, 210, 210, 210, "yellow");
+			// rectangle(182, 225, 50, 15, "black");
+			picture(160, 200, "img/menu.png");
+
+
+	}
+}
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
