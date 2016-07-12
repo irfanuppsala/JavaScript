@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Min första sida</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+// Function execution with and without parameter
+function Employee()
+{
+	this.name;
+	this.profession;
+}
+
+var person = new Employee();
+person.name = "Kalle";
+person.profession = "Utvecklare";
+
+document.write("Den nye heter " + person.name + " " + "Och den nya jobb " + person.profession); 
+document.write('<br>');
+
+function Employer (name, department)
+{
+	this.name = name;
+	this.department = department;
+}
+
+var manager = new Employer("Kalle", "Sales");
+document.write("Du heter " + manager.name);	
+document.write('<br>');
+
+
+/*function name()
+{
+	i=0;
+	while(i<=10)
+		{
+			document.write('I am the best');
+			document.write("<br>");
+			i++;
+		}
+}
+name();
+*/
+function getRadioVal(operation) {
+    var val;
+    // get list of radio buttons with specified name
+    var radios = document.frmCal.elements[operation];
+    
+    // loop through list of radio buttons
+    for (var i=0, len=radios.length; i<len; i++) {
+        if ( radios[i].checked ) { // radio checked?
+            val = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
+}
+
+function math(opr)
+{
+	if (document.getElementById('operation').checked) {
+  		rate_value = document.getElementById('operation').value;
+  		alert(rate_value);
+	}
+	//alert(document.getElementById('operation').value);
+	//alert(opr);
+	var test = parseInt(val1)+parseInt(val2);
+
+	
+	//alert(document.getElementById('val1').value);
+}
+</script>
+</head>
+<body>
+<br />
+	<div>
+	<form name="frmCal" method="post">
+	<table>
+		<tr>
+			<td><b>Simple Calculator</b></td>
+		</tr>
+		<tr>
+			<td>
+				<input name="operation" id="operation" type="radio" value="1">Add
+				<input name="operation" id="operation" type="radio" value="2">Subtract
+				<input name="operation" id="operation" type="radio" value="3">Multiply
+				<input name="operation" id="operation" type="radio" value="4">Divide
+			</td>
+		</tr>
+		<tr>
+			<td><input type="text" name="num1" id="num1"></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="num2" id="num2"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="click" value="Click Me" onclick="getRadioVal(form, operation);"></td>
+		</tr>
+		<tr>
+			<td><script></script></td>
+		</tr>
+	</table>
+	</form>
+	</div>
+</body>
+</html>
